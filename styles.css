@@ -1,0 +1,550 @@
+/* =========================================
+   Reset and Base Styles
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables for theming and consistent colors */
+:root {
+    --primary-color: #4c6fff;
+    --secondary-color: #8c54ff;
+    --background-color: #f8f9fa;
+    --card-bg-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+    --positive-color: #4caf50;
+    --negative-color: #f44336;
+    --hover-color: #f0f0f0;
+}
+
+/* Dark mode theme variables */
+body.dark-mode {
+    --background-color: #121212;
+    --card-bg-color: #1e1e1e;
+    --text-color: #f0f0f0;
+    --border-color: #333333;
+    --hover-color: #2a2a2a;
+}
+
+/* Base body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+/* Main container limiting width and centering content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* =========================================
+   Header Styles
+   ========================================= */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+header p {
+    color: var(--secondary-color);
+}
+
+/* =========================================
+   Options Container (Search & Sort)
+   ========================================= */
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Search input and button styling */
+.search-container {
+    display: flex;
+    max-width: 400px;
+    width: 100%;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    outline: none;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Sort dropdown styling */
+.sort-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-container select {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    outline: none;
+}
+
+/* =========================================
+   Main Content Layout
+   ========================================= */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Media query for larger screens - 2 column layout */
+@media (min-width: 992px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Common section styling for both crypto list and comparison */
+section {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    height: 100%;
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* =========================================
+   Cryptocurrency List Styling
+   ========================================= */
+.crypto-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 600px;
+    overflow-y: auto; /* Scrollable list for many cryptocurrencies */
+}
+
+/* Individual cryptocurrency card styling */
+.crypto-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+/* Hover effect for cards */
+.crypto-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--hover-color);
+}
+
+/* Style for selected cards (added to comparison) */
+.crypto-card.selected {
+    border: 2px solid var(--primary-color);
+}
+
+/* Left side of crypto card with icon and name */
+.crypto-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.crypto-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.crypto-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.crypto-name h3 {
+    font-size: 16px;
+}
+
+.crypto-symbol {
+    color: #777;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Right side of crypto card with price and other data */
+.crypto-data {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.crypto-price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Styling for 24h price change indicator */
+.crypto-change {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Colors for positive and negative price changes */
+.positive {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--positive-color);
+}
+
+.negative {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: var(--negative-color);
+}
+
+.crypto-market-cap, .crypto-volume {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Loading state styling */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* =========================================
+   Loader Animation
+   ========================================= */
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid var(--border-color);
+    border-bottom-color: var(--primary-color);
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Full screen loader overlay */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--background-color), 0.8);
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.loader-overlay .loader {
+    width: 60px;
+    height: 60px;
+}
+
+.loader-text {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* =========================================
+   Comparison Section Styling
+   ========================================= */
+.comparison-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 200px;
+}
+
+/* Empty state messaging */
+.comparison-empty {
+    text-align: center;
+    padding: 40px 0;
+    color: #777;
+    font-style: italic;
+}
+
+/* Comparison card styling */
+.comparison-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+}
+
+.comparison-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Remove button styling */
+.remove-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--negative-color);
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+.remove-btn:hover {
+    transform: scale(1.2);
+}
+
+/* =========================================
+   User Preferences Section
+   ========================================= */
+.user-preferences {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.user-preferences h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Layout for preference options */
+.preference-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.preference-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Checkbox styling */
+.preference-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* =========================================
+   Footer Styles
+   ========================================= */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: #777;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   Notification System
+   ========================================= */
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.notification {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease-out forwards;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 300px;
+}
+
+/* Different notification types */
+.notification.error {
+    border-left-color: var(--negative-color);
+}
+
+.notification.success {
+    border-left-color: var(--positive-color);
+}
+
+/* Close button for notifications */
+.notification-close {
+    background: none;
+    border: none;
+    color: #777;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Animation for notification appearance */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for notification dismissal */
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* =========================================
+   Responsive Adjustments
+   ========================================= */
+@media (max-width: 768px) {
+    /* Stack elements on smaller screens */
+    .options-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-container {
+        max-width: 100%;
+    }
+    
+    /* Adjust crypto card layout for mobile */
+    .crypto-data {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+    }
+    
+    .crypto-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .crypto-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* =========================================
+   Custom Scrollbar Styling
+   ========================================= */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+} 

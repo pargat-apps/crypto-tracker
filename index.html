@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>Crypto Tracker</title>
+    
+    <!-- Stylesheets: Custom CSS and Font Awesome icons -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <!-- Full screen loader overlay -->
+    <div id="loaderOverlay" class="loader-overlay">
+        <span class="loader"></span>
+        <p class="loader-text">Loading cryptocurrency data...</p>
+    </div>
+
+    <!-- Main container for all content -->
+    <div class="container">
+        <!-- Header section with title and description -->
+        <header>
+            <h1><i class="fas fa-coins"></i> Crypto Tracker</h1>
+            <p>Real-time cryptocurrency price tracker</p>
+        </header>
+
+        <!-- Search and sort options container -->
+        <div class="options-container">
+            <!-- Search functionality -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search cryptocurrency...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <!-- Sort functionality -->
+            <div class="sort-container">
+                <label for="sortOption">Sort by:</label>
+                <select id="sortOption">
+                    <option value="market_cap_desc">Market Cap (High to Low)</option>
+                    <option value="market_cap_asc">Market Cap (Low to High)</option>
+                    <option value="price_desc">Price (High to Low)</option>
+                    <option value="price_asc">Price (Low to High)</option>
+                    <option value="change_desc">24h Change (High to Low)</option>
+                    <option value="change_asc">24h Change (Low to High)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Main content area with cryptocurrency list and comparison sections -->
+        <main>
+            <!-- Left section: List of all cryptocurrencies -->
+            <section class="crypto-list-section">
+                <h2>Cryptocurrencies</h2>
+                <div class="crypto-list" id="cryptoList">
+                    <!-- Cryptocurrency list will be populated dynamically via JavaScript -->
+                    <div class="loading">Loading cryptocurrency data...</div>
+                </div>
+            </section>
+
+            <!-- Right section: Comparison area for selected cryptocurrencies -->
+            <section class="comparison-section">
+                <h2>Comparison (Select up to 5)</h2>
+                <div id="comparisonContainer" class="comparison-container">
+                    <!-- Selected cryptocurrencies for comparison will be displayed here via JavaScript -->
+                    <div class="comparison-empty">Select cryptocurrencies to compare</div>
+                </div>
+            </section>
+        </main>
+
+        <!-- User preferences section for display options -->
+        <div class="user-preferences">
+            <h3>Display Preferences</h3>
+            <div class="preference-options">
+                <!-- Toggle for showing 24h price change -->
+                <div class="preference-item">
+                    <input type="checkbox" id="show24hChange" checked>
+                    <label for="show24hChange">Show 24h Change</label>
+                </div>
+                
+                <!-- Toggle for showing market cap -->
+                <div class="preference-item">
+                    <input type="checkbox" id="showMarketCap" checked>
+                    <label for="showMarketCap">Show Market Cap</label>
+                </div>
+                
+                <!-- Toggle for showing 24h volume -->
+                <div class="preference-item">
+                    <input type="checkbox" id="showVolume" checked>
+                    <label for="showVolume">Show 24h Volume</label>
+                </div>
+                
+                <!-- Toggle for dark mode -->
+                <div class="preference-item">
+                    <input type="checkbox" id="enableDarkMode">
+                    <label for="enableDarkMode">Dark Mode</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer with data source attribution and copyright info -->
+        <footer>
+            <p>Data provided by <a href="https://www.coingecko.com/en/api" target="_blank">CoinGecko API</a></p>
+            <p>© 2024 Crypto Tracker | Lambton College</p>
+        </footer>
+    </div>
+
+    <!-- Container for notification messages -->
+    <div id="notificationContainer" class="notification-container"></div>
+    
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html> 
