@@ -1,5 +1,5 @@
 # Crypto Tracker
-
+https://pargat-apps.github.io/crypto-tracker/
 A real-time cryptocurrency tracking application that allows users to view and compare prices of selected cryptocurrencies.
 
 ## Overview
