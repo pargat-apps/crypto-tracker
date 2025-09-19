@@ -1,55 +1,83 @@
-# Crypto Tracker
-https://pargat-apps.github.io/crypto-tracker/
-A real-time cryptocurrency tracking application that allows users to view and compare prices of selected cryptocurrencies.
+# 🚀 Crypto Tracker
 
-## Overview
+🔗 **Live Demo:** [Crypto Tracker](https://pargat-apps.github.io/crypto-tracker/)  
 
-This application is a Single Page Application (SPA) built using HTML, CSS, and JavaScript/jQuery. It utilizes the free tier of the CoinGecko API to fetch real-time cryptocurrency data and enables users to select up to 5 cryptocurrencies for side-by-side comparison.
+A real-time **cryptocurrency tracking application** that lets you view, search, and compare prices of your favorite coins.  
 
-## Features
+---
 
-- **Cryptocurrency Listing**: Displays a list of popular cryptocurrencies, including essential details such as name, symbol, current price, 24-hour change, and market cap.
-- **Comparison Section**: Users can add up to 5 cryptocurrencies to compare their real-time prices side-by-side.
-- **User Preferences**: Users can customize their experience by:
-  - Toggling display of 24-hour price changes
-  - Toggling display of market cap
-  - Toggling display of 24-hour volume
-  - Enabling dark mode
-- **Data Persistence**: The application uses local storage to save user preferences and selected comparison cryptocurrencies between sessions.
-- **Search Functionality**: Users can search for specific cryptocurrencies by name or symbol.
-- **Sorting Options**: Users can sort cryptocurrencies by market cap, price, or 24-hour change (ascending or descending).
-- **Responsive Design**: The application is fully responsive and works on all device sizes.
+## 📖 Overview  
 
-## Technical Implementation
+Crypto Tracker is a **Single Page Application (SPA)** built with **HTML, CSS, and JavaScript/jQuery**.  
+It fetches **real-time data** from the [CoinGecko API](https://www.coingecko.com/en/api) and allows users to **track up to 5 cryptocurrencies side by side**.  
 
-- **HTML**: Single HTML file that serves as the application's entire structure.
-- **CSS**: External CSS for styling and responsive layout.
-- **JavaScript/jQuery**: Used for fetching data, handling events, and implementing the comparison feature.
-- **API Usage**: CoinGecko API within the constraints of the free-tier rate limit (5-15 calls per minute). The application updates the cryptocurrency data every minute.
-- **Local Storage**: Persists user preferences and comparison selections across sessions.
+---
 
-## API Rate Limiting
+## ✨ Features  
 
-The application respects CoinGecko's free API tier rate limits by:
-- Fetching data only once per minute
-- Implementing a cooldown period between API calls
-- Displaying notifications when respecting rate limits
+- 📊 **Cryptocurrency Listing** → Name, symbol, price, 24h change, and market cap  
+- ⚖️ **Comparison Section** → Compare up to **5 cryptocurrencies** in real time  
+- 🎛 **User Preferences** →  
+  - Toggle display of 24h change  
+  - Toggle market cap  
+  - Toggle 24h volume  
+  - Dark mode 🌙  
+- 💾 **Data Persistence** → Saves your preferences & selections in **local storage**  
+- 🔍 **Search Functionality** → Find coins by **name or symbol**  
+- ↕️ **Sorting Options** → Sort by **market cap, price, or 24h change** (asc/desc)  
+- 📱 **Responsive Design** → Works smoothly on **desktop, tablet, and mobile**  
 
-## How to Use
+---
 
-1. **View Cryptocurrencies**: Browse the list of cryptocurrencies with their current prices and other details.
-2. **Search**: Use the search box to find specific cryptocurrencies by name or symbol.
-3. **Sort**: Use the dropdown to sort the cryptocurrencies by different criteria.
-4. **Compare**: Click on any cryptocurrency card to add it to the comparison section (maximum 5).
-5. **Remove from Comparison**: Click the "X" button on any cryptocurrency in the comparison section to remove it.
-6. **Adjust Preferences**: Use the checkboxes in the preferences section to customize what information is displayed.
+## 🛠️ Tech Stack  
 
-## Running the Application
+- **Frontend:** HTML, CSS, JavaScript, jQuery  
+- **API:** [CoinGecko Free Tier API](https://www.coingecko.com/en/api)  
+- **Storage:** Local Storage (for saving user preferences)  
 
-Simply open the `index.html` file in a web browser to run the application. No server or build process is required.
+---
 
-## Credits
+## ⚡ API Rate Limiting  
 
-- Data provided by [CoinGecko API](https://www.coingecko.com/en/api)
-- Icons from [Font Awesome](https://fontawesome.com/)
-- jQuery library 
+To respect the **CoinGecko free API tier limits (5–15 calls/minute)**:  
+- Data updates **once every minute**  
+- Built-in **cooldown** between API calls  
+- Displays **notifications** when rate limits are being observed  
+
+---
+
+## 🚀 How to Use  
+
+1. **Browse Cryptocurrencies** → Explore real-time prices & market details  
+2. **Search** → Quickly find any coin by name or symbol  
+3. **Sort** → Reorder the list by market cap, price, or daily change  
+4. **Compare** → Add up to **5 coins** for side-by-side comparison  
+5. **Remove** → Click ❌ to remove from comparison  
+6. **Preferences** → Toggle details & enable **dark mode** 🌙  
+
+---
+
+## ▶️ Running the Application  
+
+Just open `index.html` in your browser.  
+⚡ No server or build process required!  
+
+---
+
+## 🙌 Credits  
+
+- 📈 Data: [CoinGecko API](https://www.coingecko.com/en/api)  
+- 🎨 Icons: [Font Awesome](https://fontawesome.com/)  
+- ⚡ Library: [jQuery](https://jquery.com/)  
+
+---
+
+## 💡 Future Enhancements (Ideas)  
+- 🔔 Price alerts & notifications  
+- 📉 Historical price charts  
+- 🌐 Multi-language support  
+- 💰 Portfolio tracking feature  
+
+---
+
+⭐ If you like this project, don’t forget to **star the repo**!  
