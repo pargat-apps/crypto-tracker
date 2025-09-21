@@ -1,6 +1,6 @@
 # 🚀 Crypto Tracker
 
-🔗 **Live Demo:** [Crypto Tracker](https://pargat-apps.github.io/crypto-tracker/)  
+🔗 Live Demo: https://pargat-apps.github.io/crypto-tracker/
 
 A real-time **cryptocurrency tracking application** that lets you view, search, and compare prices of your favorite coins.  
 
@@ -80,4 +80,4 @@ Just open `index.html` in your browser.
 
 ---
 
-⭐ If you like this project, don’t forget to **star the repo**!  
+⭐ If you like this project, don't forget to **star the repo**!
