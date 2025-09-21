@@ -1,6 +1,6 @@
 # 🚀 Crypto Tracker
 
-🔗 Live Demo: https://pargat-apps.github.io/crypto-tracker/
+🔗 Live Demo: https://crypto-tracker-eight-lilac.vercel.app/
 
 A real-time **cryptocurrency tracking application** that lets you view, search, and compare prices of your favorite coins.  
 
